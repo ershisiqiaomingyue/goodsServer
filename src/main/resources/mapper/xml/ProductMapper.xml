@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zx.mapper.ProductMapper">
+
+    <resultMap id="" type="com.zx.entity.Product">
+        <id column="product_name" property="productName"/>
+        <id column="product_id" property="productId"/>
+        <id column="category_id" property="categoryId"/>
+        <id column="product_title" property="productTitle"/>
+        <id column="product_info" property="productInfo"/>
+        <id column="product_picture" property="productPicture"/>
+        <id column="product_price" property="productPrice"/>
+        <id column="product_selling_price" property="productSellingPrice"/>
+        <id column="product_num" property="productNum"/>
+        <id column="product_sales" property="productSales"/>
+    </resultMap>
+
+    <!--需要使用if-->
+    <select id="allGoods" resultType="com.zx.entity.Product">
+        select *
+        from product
+        where 1 = 1
+        <if test="categoryId != null and categoryId != ''">
+            and category_id = ${categoryId}
+        </if>
+        <if test="keyword != null and keyword != ''">
+            and product_name like concat('%',#{keyword},'%')
+        </if>
+        <if test="order != null and order != ''">
+             order by product_selling_price ${order}
+        </if>
+         limit ${currentPage},${pageSize}
+
+
+    </select>
+
+    <select id="total" resultType="int">
+        select count(*)
+        from product
+        where 1 = 1
+        <if test="keyword != '' and keyword != null" >
+           and product_name like concat('%',#{keyword},'%')
+        </if>
+        <if test="categoryId != null and categoryId != ''">
+            and category_id = ${categoryId}
+        </if>
+    </select>
+</mapper>

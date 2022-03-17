@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zx.mapper.ShoppingcartMapper">
+
+
+    <select id="count" parameterType="int" resultType="int">
+        select count(*)
+        from shoppingcart
+        where user_id = #{user_id} and product_id =#{product_id}
+    </select>
+
+    <update id="updateInfo" parameterType="int">
+        update shoppingcart
+        set total_num = total_num+#{total_num}
+        where product_id = #{product_id} and user_id = #{user_id}
+    </update>
+
+    <!--获取购物车的商品id-->
+    <select id="getProduct" parameterType="int" resultType="com.zx.entity.Shoppingcart">
+        select * from shoppingcart
+        where user_id = #{user_id} and product_id =#{product_id}
+    </select>
+
+    <!--获取购物车信息-->
+    <select id="shoppingCartList" resultType="com.zx.entity.Shoppingcart">
+        select * from shoppingcart
+        where user_id = ${user_id}
+    </select>
+
+    <!--更新购物车信息-->
+    <update id="updateShoppingCart" >
+        update shoppingcart
+        set total_num = #{total_num},is_checked = #{is_checked}
+        where product_id = #{product_id} and user_id = #{user_id}
+    </update>
+
+    <!--删除购物车信息-->
+    <delete id="deleteShoppingCart" parameterType="int">
+        delete
+        from shoppingcart
+        where user_id = #{user_id} and product_id = #{product_id}
+    </delete>
+
+    <!--更新选择-->
+    <update id="updateCheck" >
+        update shoppingcart
+        set is_checked = #{is_checked}
+        where user_id = #{user_id} and product_id = #{product_id}
+    </update>
+
+    <!--更新全选-->
+    <update id="updateAllCheck" >
+        update shoppingcart
+        set is_checked = #{is_checked}
+        where user_id = #{user_id}
+    </update>
+
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zx.mapper.UserMapper">
+    <!--结果集映射权限-->
+    <resultMap id="map" type="com.zx.entity.User">
+        <id column="nick_name" property="nickName"/>
+    </resultMap>
+    <!--获取用户的权限和密码和名字
+    密码用于比对是否匹配，名字用于返回给前段-->
+    <select id="login" resultType="com.zx.entity.User">
+        select nick_name,name,avatar,user_id
+        from user where account = #{account} and password = #{password}
+    </select>
+
+    <!--注册-->
+    <insert id="register" parameterType="com.zx.entity.User">
+        insert into user(account, name, nick_name, password, avatar)
+        values (#{account},#{name},#{nick_name},#{password},#{avatar})
+    </insert>
+</mapper>

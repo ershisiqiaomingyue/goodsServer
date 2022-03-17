@@ -1,0 +1,32 @@
+spring:
+  #数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 8.0+的mysql，一定要加时区，否则报错
+    url: jdbc:mysql://localhost:3306/goods?useSSL=true&&serverTimezone=UTC
+    #本地
+    #username:root
+    #password:123456
+    #服务器端
+    username: goods
+    password: zx8812..
+#log4j2的配置
+logging.config: classpath:log4j2.xml
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #配置逻辑删除
+  global-config:
+    db-config:
+      #逻辑删除在实体类中的字段名！配置了这个后，实体类中就不需要加逻辑删除的注解了
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      #自定义的增删改查sql
+  mapper-locations: classpath:mapper/xml/*.xml
+server:
+  #服务器端
+  port: 5000
+  #本地
+  #port:8000
