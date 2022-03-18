@@ -1,12 +1,11 @@
-20:53:52.985 [main] INFO  com.zx.GoodsServerApplication  - Starting GoodsServerApplication using Java 17.0.2 on 二十四桥 with PID 16308 (C:\Users\Administrator\Desktop\后台\goods-server\target\classes started by Administrator in C:\Users\Administrator\Desktop\后台\goods-server)
-20:53:52.994 [main] INFO  com.zx.GoodsServerApplication  - The following 1 profile is active: "test"
-20:53:54.254 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8000"]
-20:53:54.255 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
-20:53:54.256 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.58]
-20:53:54.352 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  - Initializing Spring embedded WebApplicationContext
-20:53:54.718 [main] WARN  com.baomidou.mybatisplus.core.injector.DefaultSqlInjector  - class com.zx.entity.Goodsorder ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-20:53:55.545 [main] INFO  com.zaxxer.hikari.HikariDataSource  - HikariPool-1 - Starting...
-20:53:56.183 [main] INFO  com.zaxxer.hikari.HikariDataSource  - HikariPool-1 - Start completed.
-20:53:56.484 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-8000"]
-20:53:56.582 [main] INFO  com.zx.GoodsServerApplication  - Started GoodsServerApplication in 4.024 seconds (JVM running for 6.226)
-20:56:21.638 [http-nio-8000-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:40:36.977 [main] INFO  com.zx.GoodsServerApplication  - Starting GoodsServerApplication using Java 17.0.2 on 二十四桥 with PID 8316 (C:\Users\Administrator\Desktop\后台\goods-server\target\classes started by Administrator in C:\Users\Administrator\Desktop\后台\goods-server)
+09:40:36.993 [main] INFO  com.zx.GoodsServerApplication  - The following 1 profile is active: "test"
+09:40:38.338 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-5000"]
+09:40:38.339 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
+09:40:38.340 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.58]
+09:40:38.429 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]  - Initializing Spring embedded WebApplicationContext
+09:40:38.982 [main] WARN  com.baomidou.mybatisplus.core.injector.DefaultSqlInjector  - class com.zx.entity.Goodsorder ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+09:40:39.605 [main] INFO  com.zaxxer.hikari.HikariDataSource  - HikariPool-1 - Starting...
+09:40:40.464 [main] INFO  com.zaxxer.hikari.HikariDataSource  - HikariPool-1 - Start completed.
+09:40:40.588 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-5000"]
+09:40:40.623 [main] INFO  com.zx.GoodsServerApplication  - Started GoodsServerApplication in 4.091 seconds (JVM running for 6.167)

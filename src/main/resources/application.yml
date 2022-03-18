@@ -5,11 +5,11 @@ spring:
     # 8.0+的mysql，一定要加时区，否则报错
     url: jdbc:mysql://localhost:3306/goods?useSSL=true&&serverTimezone=UTC
     #本地
-    #username:root
-    #password:123456
+    username: root
+    password: 123456
     #服务器端
-    username: goods
-    password: zx8812..
+    #username: goods
+    #password: zx8812..
 #log4j2的配置
 logging.config: classpath:log4j2.xml
 
