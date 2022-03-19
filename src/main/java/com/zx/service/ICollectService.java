@@ -16,4 +16,7 @@ public interface ICollectService extends IService<Collect> {
 
     //查询喜欢的商品
     ResponseResult get(Integer user_id);
+
+    //删除喜欢的商品
+    ResponseResult delete(String data);
 }

@@ -9,4 +9,7 @@ public interface CollectMapper extends BaseMapper<Collect> {
 
     //查询是否已经有该商品
     int queryGoods(Integer user_id,Integer product_id);
+
+    //删除喜欢的商品
+    Boolean deleteGoods(Integer user_id, Integer product_id);
 }

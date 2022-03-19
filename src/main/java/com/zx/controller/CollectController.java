@@ -52,4 +52,10 @@ public class CollectController {
         return service.get(user_id);
     }
 
+    //删除喜欢的商品
+    @PostMapping("/delete")
+    ResponseResult delete(@RequestBody String data) {
+        return service.delete(data);
+    }
+
 }
